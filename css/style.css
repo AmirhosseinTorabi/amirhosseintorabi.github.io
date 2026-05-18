@@ -336,6 +336,29 @@ body.dark .hero {
   color: var(--text-muted);
 }
 
+.project-links {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn-project {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-project:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
 .projects-more {
   margin-top: 3rem;
   text-align: center;
@@ -568,4 +591,16 @@ body.dark .hero {
   .menu-toggle {
     display: none;
   }
+}
+
+/* ===== Scroll Animations ===== */
+.fade-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

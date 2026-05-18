@@ -80,3 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ===== Scroll Animations =====
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedEls = document.querySelectorAll(
+    ".highlight-card, .skill-card, .project-card, .contact-card, .about-text, .section-title"
+  );
+
+  animatedEls.forEach(el => {
+    el.classList.add("fade-hidden");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  animatedEls.forEach(el => observer.observe(el));
+});
